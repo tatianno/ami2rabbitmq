@@ -1,4 +1,4 @@
 wheel
 pika
 pyst2
-redis
+wrapper-redis-client

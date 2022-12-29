@@ -17,7 +17,7 @@ with open("README.md", "r") as arq:
 
 setup(
     name='ami2rabbitmq',
-    version='0.1.6',
+    version='0.1.7',
     license='MIT License',
     author='Tatianno Alves',
     long_description=readme,
