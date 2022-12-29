@@ -5,7 +5,9 @@ from ami2rabbitmq.exceptions import InvalidKey
 
 class RedisDB():
     _redis = redis.Redis()
-    _key_prefix = 'Online:'
+
+    def __init__(self, key_prefix):
+        self._key_prefix = key_prefix
 
     def validate_key(self, key: str) -> bool:
         if not key.startswith(self._key_prefix):
@@ -40,4 +42,4 @@ class RedisDB():
         for key in self.get_all_keys():
             self.delete(key)
 
-redis_server = RedisDB()
+redis_server = RedisDB('Online:')
