@@ -20,7 +20,7 @@ AMI2RabbitMQ officially supports Python 3.8+.
 
 ## Cloning the repository
 
-`https://github.com/tatianno/ami2rabbitmq.git`
+`$ git clone https://github.com/tatianno/ami2rabbitmq.git`
 
 ## Examples
 
