@@ -15,16 +15,27 @@ class AMI2RabbitMQ():
     _manager = Manager()
     _pabx = Pabx()
     status = None
-    last_events = []
-    version = '0.1.8'
+    events = [
+        'BridgeCreate',
+        'BridgeEnter',
+        'BridgeLeave',
+        'BridgeDestroy',
+        'DeviceStateChange',
+        'QueueMemberStatus',
+        'QueueEntry',
+        'QueueCallerLeave',
+        'QueueCallerJoin',
+        'QueueCallerAbandon'
+    ]
+    version = '0.2.0'
 
     def __init__(self, ami_settings: dict, rabbitmq_settings: dict, debug: bool=False) -> None:
         self._logs_app = LogsApp(debug)
         self._rabbitmq_producer = RabbitMQProducer(rabbitmq_settings, self._logs_app)
-        self.events = ami_settings['events']
         self.host = ami_settings['host']
         self.user = ami_settings['user']
         self.password = ami_settings['password']
+        self.last_events = []
 
     def _connect(self) -> None:
         self._manager.connect(self.host)

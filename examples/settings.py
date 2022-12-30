@@ -3,19 +3,7 @@ DEBUG = True
 AMI_SETTINGS = {
     'host' : '192.168.10.36',
     'user' : 'GNEW',
-    'password' : 'MMtlcmm',
-    'events' : [
-        'BridgeCreate',
-        'BridgeEnter',
-        'BridgeLeave',
-        'BridgeDestroy',
-        'DeviceStateChange',
-        'QueueMemberStatus',
-        'QueueEntry',
-        'QueueCallerLeave',
-        'QueueCallerJoin',
-        'QueueCallerAbandon'
-    ]
+    'password' : 'MMtlcmm'
 }
 
 RABBITMQ_SETTINGS = {
