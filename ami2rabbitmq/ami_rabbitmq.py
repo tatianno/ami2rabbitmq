@@ -27,7 +27,7 @@ class AMI2RabbitMQ():
         'QueueCallerJoin',
         'QueueCallerAbandon'
     ]
-    version = '0.2.0'
+    version = '0.2.1'
 
     def __init__(self, ami_settings: dict, rabbitmq_settings: dict, debug: bool=False) -> None:
         self._logs_app = LogsApp(debug)
