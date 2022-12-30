@@ -65,6 +65,21 @@ class AMI2RabbitMQ():
         return True if len(self.last_events) != 0 else False
 
     def update_events(self):
+        '''
+        The change_entities variable receives a list containing the entities that received state change events.
+
+        Entities can be of the type:
+
+        - Bridge : Call established between two endpoints
+        - QueueCaller : Call waiting in a queue
+        - Endpoint : Can be an extension or trunk
+        - QueueMember : Member of a queue
+        - Queue : Service queue
+
+        Entities are available for import:
+        
+        import from ami2rabbitmq.entities import Bridge, Endpoint, QueueCaller, QueueMember, Queue
+        '''
         change_entities = self._pabx.update(self.last_events)
         self._send_change_to_broker(change_entities)
 

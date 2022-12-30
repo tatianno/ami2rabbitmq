@@ -5,7 +5,7 @@ import settings
 
 
 
-ami_to_client = AMI2RabbitMQ(
+producer = AMI2RabbitMQ(
     ami_settings = settings.AMI_SETTINGS,
     rabbitmq_settings = settings.RABBITMQ_SETTINGS,
     debug=settings.DEBUG
@@ -13,7 +13,7 @@ ami_to_client = AMI2RabbitMQ(
 
 def main():
     print(' [*] PRESS CTRL+C TO QUIT')
-    ami_to_client.run()
+    producer.run()
     
 
 if __name__ == '__main__':
