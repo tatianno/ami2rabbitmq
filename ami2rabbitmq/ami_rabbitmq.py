@@ -6,8 +6,8 @@ from asterisk.manager import (
     ManagerAuthException,
     ManagerException
 )
+from wrapper_rabbitmq_client import RabbitMQProducer
 from ami2rabbitmq.manager import Pabx
-from ami2rabbitmq.rabbitmq import RabbitMQProducer
 from ami2rabbitmq.logs_app import LogsApp
 
 
@@ -16,6 +16,7 @@ class AMI2RabbitMQ():
     _pabx = Pabx()
     status = None
     last_events = []
+    version = '0.1.8'
 
     def __init__(self, ami_settings: dict, rabbitmq_settings: dict, debug: bool=False) -> None:
         self._logs_app = LogsApp(debug)

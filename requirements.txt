@@ -1,4 +1,4 @@
 wheel
-pika
 pyst2
 wrapper-redis-client
+wrapper-rabbitmq-client
